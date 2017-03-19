@@ -41,7 +41,7 @@ gulp.task("scss", function() {
 				]
 			)
 		)
-		.pipe(gulp.dest("./"));
+		.pipe(gulp.dest("./styles"));
 });
 
 
@@ -63,5 +63,5 @@ gulp.task("reload", function(done) {
 });
 
 gulp.task("default", ["scss", "browser-sync"], function() {
-	gulp.watch("*", ["scss", "reload"]);
+	gulp.watch("./**/*", ["scss", "reload"]);
 });
