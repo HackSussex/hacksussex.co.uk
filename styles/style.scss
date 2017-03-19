@@ -58,9 +58,23 @@ main {
 	}
 }
 
-input[type="text"] {
+input[type="text"], input[type="email"] {
 	padding:0.25rem 1rem;
 	border:3px solid #ccc;
 	border-radius:0.25rem;
 	font-size:1.5em;
+}
+
+input[type="submit"] {
+	padding:0.25rem 1rem;
+	background:$red;
+	color:#fff;
+	border:0;
+	border-bottom:3px solid darken($red, 5);
+	border-radius:0.25rem;
+	font-size:1.5em;
+
+	&:active {
+		background: darken($red, 5);
+	}
 }
