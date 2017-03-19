@@ -53,6 +53,12 @@ main {
 				height:50px;
 				border-radius:100%;
 				background:darken($green, 5);
+				transition:300ms;
+
+				&:hover {
+					background:transparent;
+					fill:#fff;
+				}
 			}
 		}
 	}
@@ -73,8 +79,14 @@ input[type="submit"] {
 	border-bottom:3px solid darken($red, 5);
 	border-radius:0.25rem;
 	font-size:1.5em;
+	cursor:pointer;
+	transition:300ms;
 
 	&:active {
 		background: darken($red, 5);
+	}
+
+	&:hover {
+		border-bottom-color:$red;
 	}
 }
