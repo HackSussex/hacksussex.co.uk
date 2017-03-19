@@ -8,7 +8,7 @@ var gulp = require("gulp"),
 	};
 
 gulp.task("scss", function() {
-	return gulp.src("/styles/style.scss")
+	return gulp.src("styles/style.scss")
 		.pipe(
 			sass(
 				{
@@ -41,7 +41,7 @@ gulp.task("scss", function() {
 				]
 			)
 		)
-		.pipe(gulp.dest("./styles"));
+		.pipe(gulp.dest("./"));
 });
 
 
