@@ -54,7 +54,7 @@ main {
 		text-align:center;
 
 		.wording {
-			width:80%;
+			width:70%;
 			margin:0 auto;
 		}
 
@@ -110,6 +110,10 @@ input[type="text"], input[type="email"] {
 	border:3px solid #ccc;
 	border-radius:0.25rem;
 	font-size:1.5em;
+
+	&:focus {
+		outline:0;
+	}
 }
 
 input[type="submit"] {
@@ -119,6 +123,7 @@ input[type="submit"] {
 	border:0;
 	border-bottom:3px solid darken($red, 5);
 	border-radius:0.25rem;
+	font-family: "Quicksand";
 	font-size:1.5em;
 	cursor:pointer;
 	transition:300ms;
@@ -129,5 +134,9 @@ input[type="submit"] {
 
 	&:hover {
 		border-bottom-color:$red;
+	}
+
+	&:focus {
+		outline:0;
 	}
 }
