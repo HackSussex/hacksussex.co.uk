@@ -89,7 +89,6 @@ main {
 		}
 
 		@media screen and (min-width:60rem) {
-			//float:left;
 			width:60vw;
 			height:auto;
 			position:absolute;
@@ -138,5 +137,54 @@ input[type="submit"] {
 
 	&:focus {
 		outline:0;
+	}
+}
+
+body.red {
+	background:$red;
+
+	section {
+		.social-links {
+			svg {
+				fill:darken($red, 15);
+				background: darken($red, 5);
+
+				&:hover {
+					background:transparent;
+					fill:#fff;
+				}
+			}
+		}
+	}
+
+	input[type="submit"] {
+		background:$green;
+		border-bottom-color:darken($green, 5);
+
+		&:active {
+			background: darken($green, 5);
+		}
+
+		&:hover {
+			border-bottom-color:$green;
+		}
+	}
+}
+
+body.blue {
+	background:$blue;
+
+	section {
+		.social-links {
+			svg {
+				fill:darken($blue, 15);
+				background: darken($blue, 5);
+
+				&:hover {
+					background:transparent;
+					fill:#fff;
+				}
+			}
+		}
 	}
 }
