@@ -49,6 +49,14 @@ main {
 		}
 	}
 
+	aside + section {
+		@media screen and (min-width:60rem) {
+			top:50%;
+			left:5vw;
+			transform:translateY(-50%);
+		}
+	}
+
 	section {
 		height:100%;
 		padding:2.5rem 0;
@@ -57,6 +65,11 @@ main {
 		.wording {
 			width:70%;
 			margin:0 auto;
+		}
+
+		.details {
+			font-size:1.5em;
+			padding:1rem 0;
 		}
 
 		.mailing-list {
@@ -94,8 +107,12 @@ main {
 			height:auto;
 			position:absolute;
 			top:50%;
-			left:5vw;
-			transform:translateY(-50%);
+			left:50%;
+			transform:translateY(-50%) translateX(-50%);
+
+			.details {
+				font-size:2em;
+			}
 		}
 	}
 
