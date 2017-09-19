@@ -18,6 +18,7 @@ a {
 }
 
 main {
+	height:100vh;
 	aside {
 		padding:1rem;
 		background:$midnight;
@@ -43,8 +44,6 @@ main {
 	}
 
 	.hero {
-		height:100vh;
-
 		section {
 			padding:2.5rem 0;
 			text-align:center;
@@ -106,10 +105,10 @@ main {
 				}
 			}
 		}
-	}
 
-	@media screen and (min-width:60rem) {
-		height:100vh;
+		@media screen and (min-width:60rem) {
+			height:100%;
+		}
 	}
 }
 
@@ -153,6 +152,7 @@ input[type="text"], input[type="email"] {
 }
 
 input[type="submit"], .button {
+	-webkit-appearance: none;
 	display:block;
 	text-decoration:none;
 	padding:0.25rem 1rem;
