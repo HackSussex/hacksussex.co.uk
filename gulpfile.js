@@ -63,5 +63,6 @@ gulp.task("reload", function(done) {
 });
 
 gulp.task("default", ["scss", "browser-sync"], function() {
-	gulp.watch("./**/*", ["scss", "reload"]);
+	gulp.watch("./**/*.scss", ["scss"]);
+	gulp.watch("./**/*.{html,css}", ["reload"]);
 });
