@@ -1,0 +1,57 @@
+// Width based media query options:
+// 
+// 1) ( 30em ) = min-width from 30em upwards
+// 
+// 2) ( 30em, true ) = max-width from 30em downwards
+// 
+// 3) ( 30em, 40em ) = widths from 30em to 40em
+@mixin mq( $min, $max: false ) {
+	@if ( $min and $max == false ) {
+		@media screen and ( min-width: $min ) {
+			@content;
+		}
+	}
+	@else if ( $min and $max == true ) {
+		@media screen and ( max-width: $min ) {
+			@content;
+		}
+	}
+	@else if ( $min and $max ) {
+		@media screen and ( min-width: $min ) and ( max-width: $max ) {
+			@content;
+		}
+	}
+}
+
+
+// Height based media query options:
+// 
+// 1) ( 30em ) = min-height from 30em upwards
+// 
+// 2) ( 30em, true ) = max-height from 30em downwards
+// 
+// 3) ( 30em, 40em ) = heights from 30em to 40em
+@mixin mqh( $min, $max: false ) {
+	@if ( $min and $max == false ) {
+		@media screen and ( min-height: $min ) {
+			@content;
+		}
+	}
+	@else if ( $min and $max == true ) {
+		@media screen and ( max-height: $min ) {
+			@content;
+		}
+	}
+	@else if ( $min and $max ) {
+		@media screen and ( min-height: $min ) and ( max-height: $max ) {
+			@content;
+		}
+	}
+}
+
+
+@mixin mqmix( $width, $height ) {
+	@media screen and ( min-width: $width ) and ( min-height: $height ) {
+		@content;
+	}
+}
