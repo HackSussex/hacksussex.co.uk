@@ -1,7 +1,11 @@
 var gulp = require("gulp"),
 	browserSync = require("browser-sync").create(),
+	browserify = require("browserify"),
 	sass = require("gulp-sass"),
 	notify = require("gulp-notify"),
+	source = require("vinyl-source-stream"),
+	rename = require("gulp-rename"),
+	glob = require("glob"),
 	postCSS = {
 		"core": require("gulp-postcss"),
 		"prefix": require("autoprefixer")
@@ -50,6 +54,17 @@ function onError(err) {
 	this.emit("end");
 }
 
+gulp.task("browserify", function() {
+	var pathStr = "./scripts/index.js";
+	var files = glob.sync(pathStr);
+	var b = browserify(files);
+
+	return b.bundle()
+		.pipe(source("./scripts/index.js"))
+		.pipe(rename("dist.js"))
+		.pipe(gulp.dest("./"));
+});
+
 gulp.task("browser-sync", function() {
 	browserSync.init({
 		"server": {},
@@ -57,12 +72,15 @@ gulp.task("browser-sync", function() {
 		"open": false
 	});
 });
+
 gulp.task("reload", function(done) {
 	browserSync.reload();
 	done();
 });
 
-gulp.task("default", ["scss", "browser-sync"], function() {
+gulp.task("default", ["browserify", "scss", "browser-sync"], function() {
 	gulp.watch("./**/*.scss", ["scss"]);
+	gulp.watch("./scripts/*.js", ["browserify"]);
+	gulp.watch("./dist.js", ["reload"]);
 	gulp.watch("./**/*.{html,css}", ["reload"]);
 });

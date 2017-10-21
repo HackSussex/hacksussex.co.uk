@@ -1,7 +1,7 @@
 {
 	"name": "hacksussex.co.uk",
 	"description": "The HackSussex site",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"author": "Elliot Massen",
 	"scripts": {
 		"start": "gulp"
@@ -9,9 +9,17 @@
 	"dependencies": {
 		"autoprefixer": "^6.4.0",
 		"browser-sync": "^2.17.5",
+		"browserify": "^14.4.0",
+		"glob": "^7.1.2",
 		"gulp": "^3.9.1",
+		"gulp-notify": "^2.2.0",
 		"gulp-postcss": "^6.1.1",
+		"gulp-rename": "^1.2.2",
 		"gulp-sass": "^2.3.2",
-    	"gulp-notify": "^2.2.0"
+		"nuxt": "^1.0.0-rc11",
+		"vinyl-source-stream": "^1.1.0",
+		"vue": "^2.4.4",
+		"vue-router": "^3.0.0",
+		"whatwg-fetch": "^2.0.3"
 	}
 }
