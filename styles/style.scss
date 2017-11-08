@@ -640,7 +640,6 @@ form {
 	}
 }
 
-// SCHEDULE
 .page {
 	.hero {
 		padding-top:10rem;
@@ -664,6 +663,40 @@ form {
 			padding-top:37.5vh;
 			padding-bottom:6rem;
 			padding-bottom:15vh;
+		}
+	}
+}
+
+// SCHEDULE
+.schedule-page {
+	section ul {
+		margin-bottom:5rem;
+	}
+
+	.block-list--item {
+		time {
+			font-weight:800;
+			font-size:1.5em;
+		}
+
+		span {
+			margin-top:0.75rem;
+			text-align:center;
+		}
+	}
+
+	@include mq(40em) {
+		.block-list--item {
+			padding-left:3rem;
+			padding-right:3rem;
+
+			time {
+				margin-right:2rem;
+			}
+
+			span {
+				margin-top:0;
+			}
 		}
 	}
 }
