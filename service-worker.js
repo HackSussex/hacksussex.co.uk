@@ -1,4 +1,4 @@
-var CACHE_NAME = "hacksussex-cache-v0.0.0";
+var CACHE_NAME = "hacksussex-cache-v0.0.1";
 var urlsToCache = [
   "./",
   "/index.html",

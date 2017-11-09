@@ -3,7 +3,7 @@
   "short_name": "HackSussex",
   "theme_color": "#222222",
   "background_color": "#222222",
-  "display": "minimal-ui",
+  "display": "standalone",
   "Scope": "/",
   "start_url": "/",
   "icons": [
