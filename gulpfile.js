@@ -1,6 +1,6 @@
 var gulp = require("gulp"),
-	browserSync = require("browser-sync").create(),
 	browserify = require("browserify"),
+	browserSync = require("browser-sync").create(),
 	sass = require("gulp-sass"),
 	notify = require("gulp-notify"),
 	source = require("vinyl-source-stream"),
@@ -48,7 +48,6 @@ gulp.task("scss", function() {
 		.pipe(gulp.dest("./styles"));
 });
 
-
 function onError(err) {
 	notify().write(err);
 	this.emit("end");
@@ -78,7 +77,7 @@ gulp.task("reload", function(done) {
 	done();
 });
 
-gulp.task("default", ["browserify", "scss", "browser-sync"], function() {
+gulp.task("default", ["scss", "browser-sync"], function() {
 	gulp.watch("./**/*.scss", ["scss"]);
 	gulp.watch("./scripts/*.js", ["browserify"]);
 	gulp.watch("./dist.js", ["reload"]);

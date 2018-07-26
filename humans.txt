@@ -1,9 +1,5 @@
 /* TEAM */
 
-Designer: Sam Kennard
-Twitter: @eskayd2
-From: Brighton, UK
-
 Developer: Elliot Massen
 Website: http://elliotmassen.com/
 Twitter: @elliotmassen

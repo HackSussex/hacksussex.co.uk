@@ -8,62 +8,14 @@ body {
 	font-weight:700;
 	font-size:20px;
 	color: #222;
-	background:#eee;
+	background:$yellow url("../bg.svg");
+	background-size:171px 150px;
+	line-height:1.5;
 }
 
-// GENERAL
-
-
 a {
-	position:relative;
 	color:#222;
 	text-decoration:underline;
-
-	&.no-style {
-		&:before, &:after {
-			display:none;
-		}
-	}
-
-	@include mq(40em) {
-		text-decoration:none;
-		display:inline-block;
-
-		&:before {
-			position:absolute;
-			left:50%;
-			transform:translateX(-50%);
-			bottom:-3px;
-			display:block;
-			content:"";
-			height:2px;
-			width:100%;
-			background:$red;
-			transition:0.5s ease;
-		}
-
-		&:after {
-			position:absolute;
-			left:50%;
-			transform:translateX(-50%);
-			bottom:-3px;
-			display:block;
-			content:"";
-			height:2px;
-			width:0px;
-			background:$green;
-			transition:0.5s ease;
-		}
-
-		&:hover, &:focus {
-			&:before {
-				width:0px;
-			}
-			&:after {
-				width:100%;
-			}
-		}
-	}
 }
 
 h2 {
@@ -72,492 +24,55 @@ h2 {
 }
 
 p {
-	margin:0;
-	padding-top:1em;
-}
+	margin:1em 0 0;
 
-.image-link {
-	display:inline-block;
-
-	&:before, &:after {
-		display:none;
-	}
-}
-
-.button, a.button {
-	position:relative;
-	background:$midnight;
-	color:#fff;
-	font-family:"Quicksand";
-	font-weight:700;
-	font-size:1em;
-	text-decoration:none;
-	text-transform:uppercase;
-	padding:1rem;
-	padding-right:3rem;
-	border:0;
-	border-radius:0.25rem;
-	appearance:none;
-	transition:color, background 300ms;
-	cursor:pointer;
-
-	&:hover, &:focus {
-		background:#fff;
-		color:$midnight;
-
-		&:before, &:after {
-			width:0.75rem;
-			right:1rem;
-			background:$midnight;
-		}
-	}
-
-	&:before, &:after {
-		display:block;
-		content:"";
-		position:absolute;
-		left:auto;
-		bottom:auto;
-		right:0.75rem;
-		width:0.75rem;
-		height:0.25rem;
-		background:#fff;
-		transition:background, right 500ms;
-	}
-
-	&:before {
-		top:44%;
-		transform:translateY(-44%) rotate(45deg);
-	}
-
-	&:after {
-		top:56%;
-		transform:translateY(-56%) rotate(-45deg);
-	}
-}
-
-header {
-	position:absolute;
-	top:0;
-	width:100%;
-	padding:0.5rem 0;
-	background:#222;
-	z-index:10;
-	opacity:0.75;
-	text-align:center;
-
-	&.open {
-		position:fixed;
-		height:100%;
-		opacity:1;
-
-		@include mq(40em) {
-			position:relative;
-			height:auto;
-		}
-
-		& > .menu {
-			background:#fff;
-			color:#222;
-			padding:0.25rem;
-			top:1.5rem;
-			left:1.75rem;
-		}
-
-		ul {
-			display:flex;
-		}
-	}
-
-	& > .menu {
-		position:absolute;
-		left:2rem;
-		top:1.75rem;
-		color:#fff;
-		border-radius:0.25rem;
-		cursor:pointer;
-		transition:300ms ease;
-
-		@include mq(40em) {
-			display:none;
-		}
-
-		&:after {
-			display:none;
-		}
-
-		&:hover, &:focus {
-			&:after {
-				display:none;
-			}
-		}
-	}
-
-	a {
-		text-decoration:none;
-		color:#fff;
-
-		&:hover, &:focus {
-			&:after {
-				background:#fff;
-			}
-		}
-	}
-
-	img {
-		width:auto;
-		max-height:4rem;
-		height:auto;
-		margin:0 auto;
-		padding:0.5rem 0;
-	}
-
-	ul {
-		display: none;
-		flex-direction:column;
-		justify-content:space-around;
-		text-align:center;
-		height:80%;
-
-		@include mq(40em) {
-			display:flex;
-			margin: 0 auto;
-			flex-direction:row;
-			padding:1rem 0;
-		}
-
-		@include mqmix(40em, 40em) {
-			width:80%;
-			padding:2rem 0;
-		}
-
-		li {
-			a {
-				position:relative;
-				text-decoration:underline;
-
-				@include mq(40em) {
-					text-decoration:none;
-					display:inline-block;
-
-					&:before {
-						display:none;
-					}
-
-					&:after {
-						background: transparent;
-					}
-
-					&:hover, &:focus {
-						&:after {
-							background:#fff;
-						}
-					}
-				}
-			}
-		}
-	}
-}
-
-section {
-	padding:4rem 2rem;
-
-	@include mqmix(50em, 40em) {
-		padding-left: 10rem;
-		padding-right: 10rem;
-	}
-
-	h2 {
-		margin:0 0 0.75em;
-	}
-}
-
-section:nth-child(even) {
-	background:#e2e2e2;
-}
-
-// HOME
-.home-page {
-	.hero {
-		padding-top:8rem;
-		padding-bottom:2rem;
-
-
-		@include mqmix(10em, 30em) {
-			padding-top:14rem;
-			padding-top:22vh;
-			padding-bottom:8rem;
-			padding-bottom:20vh;
-		}
-
-		@include mqmix(40em, 30em) {
-			padding-top:14rem;
-			padding-top:37.5vh;
-			padding-bottom:8rem;
-			padding-bottom:20vh;
-		}
-	}
-}
-
-.hero {
-	background: url(../hero.svg) center center / cover no-repeat, linear-gradient(to right, #e74c3c 0%,#2ecc71 50%,#7db9e8 100%);
-	color:#fff;
-
-	p {
-		width:100%;
-		font-size:1em;
-		padding-bottom:1rem;
-
-		@include mqmix(30em, 30em) {
-			font-size:1.25em;
-		}
-
-		@include mqmix(60em, 40em) {
-			font-size:2em;
-			width:80%;
-		}
-	}
-
-	&--details {
-		display:block;
+	&.smaller {
 		font-size:0.75em;
-
-		@include mqmix(30em, 30em) {
-			font-size:1em;
-		}
-
-		svg {
-			position: relative;
-			height: 1em;
-			width: 1em;
-			bottom: -0.125em;
-			left:-0.125em;
-			fill:#fff;
-		}
-	}
-
-	.button {
-		display:inline-block;
-		margin-top:1rem;
-
-		@include mqmix(60em, 40em) {
-			font-size:1.25em;
-		}
-	}
-
-	.hero--sublinks {
-		margin-top:1rem;
-
-		a {
-			display:inline-block;
-			font-size:0.75em;
-			color:#fff;
-			cursor: pointer;
-
-			@include mq(40em) {
-				&:before {
-					background: transparent;
-				}
-
-				&:after {
-					background: transparent;
-				}
-
-				&:hover, &:focus {
-					&:after {
-						background:#fff;
-					}
-				}
-			}
-		}
 	}
 }
 
-.hex-list {
-	overflow:auto;
+main, footer {
+	padding:0 1rem;
+}
 
-	&.hex-list--3 {
-		.hex-list--item {
-			@include mq(60em) {
-				float:left;
-				width:33.3%;
-				padding:0 1rem;
-			}
-		}
-
-		div {
-			&:nth-child(3n+1) {
-				clear:both;
-			}
-		}
-	}
-
-	dt {
-		width:12rem;
+main {
+	.wording {
+		display: block;
 		height:12rem;
 		margin:0 auto;
-		text-align:center;
-		padding:2rem;
-		background: $midnight;
-		background: linear-gradient(125deg, $midnight 0%,$midnight 50%,#263645 50%,#263645 100%);
-		color:#fff;
-		display: flex;
-		justify-content: center;
-	  	flex-direction: column;
-	  	clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-	  	box-shadow:2px 0px 2px 0px #888 ;
-
-		& + dd {
-			margin:2rem auto;
-			text-align: center;
-
-			@include mq(40em) {
-				padding:0 2rem;
-			}
-		}
+		padding:5rem 0 2rem;
 	}
-}
 
-.block-list {
-	&--item {
-		display:flex;
-		flex-direction:column;
-		justify-content:left;
-		align-items:center;
-		background:#e2e2e2;
-		margin-top:1rem;
-		padding:1rem;
-		border:1px solid #ccc;
-		transition:300ms;
+	.main__details, .main__time {
+		display:block;
 
-		&:hover, &:focus {
-			background:#fff;
-		}
-
-		&:before, &:after {
-			display:none;
-		}
-
-		&__priority {
-			background:#f2f2f2
-		}
-
-		img, &--identity {
-			width:10rem;
-			margin-bottom:1rem;
-			font-size:3.5em;
-			text-align:center;
-
-			@include mq(40em) {
-				padding:0 3rem;
-			}
-		}
-
-		h2, h3 {
-			font-size:1.5em;
-			text-decoration:underline;
-			margin:0;
-
-			@include mq(40em) {
-				text-align:left;
-			}
-		}
-
-		ul {
-			margin-top:0.25rem;
-
-			li {
-				display:inline-block;
-				font-size:0.75em;
-
-				@include mq(60em) {
-					margin-left:0.5rem;
-
-					&:first-child {
-						margin-left:0;
-					}	
-				}
-			}
-		}
-
-		@include mq(40em) {
-			flex-direction:row;
+		svg {
+			display:inline;
+			vertical-align: middle;
+			margin:0 0.25em 0.125rem 0;
 		}
 	}
 
-	@include mq(40em) {
-		text-align:left;
+	.main__details {
+		margin-top:1em;
 	}
-}
 
-.faq {
-	text-align:center;
-}
-
-.faq-list {
-	padding:4rem 2rem;
-
-	@include mqmix(50em, 40em) {
-		padding-left: 5rem;
-		padding-right: 5rem;
-	}
-}
-
-.tracks-page {
-	h2 {
-		margin-top:3rem;
+	.main__time {
+		margin-top:0.5rem;
 	}
 }
 
 footer {
-	background: $midnight;
-	background: linear-gradient(125deg, $midnight 0%,$midnight 50%,#263645 50%,#263645 100%);
-	padding:4rem 2rem;
-	display:flex;
-	flex-direction:column;
-	align-items:center;
-	justify-content:space-between;
-
-	@include mq(80em) {
-		padding:2rem 8rem;
-		flex-direction:row;
-	}
-
-	a {
-		color:#fff;
-	}
-
-	img {
-		width:auto;
-		height:auto;
-		max-height:4rem;
-	}
-
-	.footer--navigation-links {
-		margin-top:2rem;
-		text-align:center;
-
-		@include mq(80em) {
-			text-align:left;
-			width:50%;
-			margin-top:0;
-		}
-
-		li {
-			margin-top:1rem;
-
-			&:first-child {
-				margin-top:0;
-			}
-		}
-	}
+	margin-top:2rem;
+	padding-bottom:2rem;
 
 	.footer--social-links {
-		margin-top:2rem;
+		display:flex;
+		justify-content: center;
 
 		li {
 			display:inline-block;
-			margin:0 0.125rem;
+			margin:0 0.5rem;
 		}
 
 		a {
@@ -565,9 +80,7 @@ footer {
 		}
 
 		a:hover svg, a:focus svg {
-			//fill:$midnight;
-			//background:#fff;
-			border-width:4px;
+			background:$dark-yellow;
 		}
 
 		svg {
@@ -576,9 +89,10 @@ footer {
 			width: 3em;
 			bottom: -0.125em;
 			left:-0.125em;
-			fill:#fff;
-			border:2px solid #fff;
+			fill:#222;
+			border:3px solid $dark-yellow;
 			border-radius:100%;
+			background:$yellow;
 			padding:0.5rem;
 			transition:300ms;
 		}
@@ -589,117 +103,19 @@ footer {
 	}
 }
 
-form {
-	label, input, button, textarea {
-		display:block;
-		margin:0 auto;
-		width:100%;
-
-		@include mq(40em) {
-			width:50%;
-		}
-	}
-
-	input, textarea {
-		font-size:1em;
-		border:0;
-		appearance:none;
-		padding:0.75rem;
-		font-family: "Quicksand";
-	}
-
-	textarea {
-		resize:none;
-		height:10rem;
-	}
-
-	label {
-		margin-top:1rem;
-		margin-bottom:0.25rem;
-	}
-
-	button {
-		margin-top:2rem;
-	}
-}
-
-.sponsors-cluster {
-	text-align:center;
-
-	@include mq(40em) {
-		width:50%;
+@media screen and (min-width: 40em) {
+	main, footer {
+		width:70%;
+		max-width: 50rem;
 		margin:0 auto;
 	}
-
-	img {
-		display: inline-block;
-
-		@include mq(40em) {
-			padding:1rem;
-		}
-	}
 }
 
-.page {
-	.hero {
-		padding-top:10rem;
-		padding-bottom:2rem;
-
-		h1 {
-			margin:0;
-			text-align:center;
-			font-size:2em;
-		}
-
-		@include mqmix(10em, 30em) {
-			padding-top:14rem;
-			padding-top:22vh;
-			padding-bottom:4rem;
-			padding-bottom:10vh;
-		}
-
-		@include mqmix(40em, 30em) {
-			padding-top:14rem;
-			padding-top:37.5vh;
-			padding-bottom:6rem;
-			padding-bottom:15vh;
-		}
-	}
-}
-
-// SCHEDULE
-.schedule-page {
-	section ul {
-		margin-bottom:5rem;
-	}
-
-	.block-list--item {
-		transition:1s;
-
-		time {
-			font-weight:800;
-			font-size:1.5em;
-		}
-
-		span {
-			margin-top:0.75rem;
-			text-align:center;
-		}
-	}
-
-	@include mq(40em) {
-		.block-list--item {
-			padding-left:3rem;
-			padding-right:3rem;
-
-			time {
-				margin-right:2rem;
-			}
-
-			span {
-				margin-top:0;
-				text-align:left;
-			}
+@media screen and (min-width: 70em) {
+	main {
+		.wording {
+			height:17rem;
+			padding-top:10rem;
 		}
 	}
 }

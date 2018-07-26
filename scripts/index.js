@@ -1,12 +1,4 @@
-var HackSussex = require("./src.js")
-
 window.onload = function() {
-	HackSussex.setup();
-
-	if(window.location.pathname.startsWith("/schedule.html")) {
-		HackSussex.schedule();
-	}
-
 	if("serviceWorker" in navigator) {
 		navigator.serviceWorker.register("./service-worker.js")
 		.then(function(registration) {
