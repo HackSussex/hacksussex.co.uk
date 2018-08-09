@@ -1,7 +1,7 @@
 {
 	"name": "hacksussex.co.uk",
 	"description": "The HackSussex site",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"author": "Elliot Massen",
 	"scripts": {
 		"start": "gulp"
