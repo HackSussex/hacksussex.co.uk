@@ -1,0 +1,7 @@
+name = "2018"
+description = "The 2018 HackSussex theme"
+min_version = "0.38.1"
+
+[author]
+  name = "Elliot Massen"
+  homepage = "https://elliotmassen.com"

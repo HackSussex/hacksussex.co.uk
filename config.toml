@@ -1,0 +1,4 @@
+baseURL = "https://hacksussex.co.uk/"
+languageCode = "en-gb"
+title = "HackSussex"
+theme = "2018"

@@ -1,5 +1,6 @@
 .DS_Store
 npm-debug.log
+
 node_modules/
-styles/style.css
-dist.js
+public/
+themes/2018/static/dist
