@@ -1,5 +1,10 @@
-{{ partial "header.html" . }}
+{{ define "title" }}Home{{ end }}
+{{ define "body-class" }}home{{ end }}
 
-<h1>Hello world</h1>
+{{ define "main" }}
+    {{ partial "hero.html" . }}
 
-{{ partial "footer.html" . }}
+    {{ partial "card-preview.html" . }}
+
+    {{ partial "block-preview.html" . }}
+{{ end }}
