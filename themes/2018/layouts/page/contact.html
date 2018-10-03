@@ -1,0 +1,29 @@
+{{ define "title" }}Contact{{ end }}
+{{ define "body-class" }}contact{{ end }}
+
+{{ define "main" }}
+    <section class="wrapper text-block">
+        <h1>Contact us</h1>
+        <p>If you have any questions, please do get in touch below!</p>
+    </section>
+
+    <form class="wrapper">
+        <label for="name">Name</label>
+        <input type="text" name="name" required>
+        
+        <label for="email">Email</label>
+        <input type="email" name="email" required>
+
+        <label for="id">Are you a student or company?</label>
+        <select name="id" id="form-id">
+            <option id="form-id-student" value="student">Student</option>
+            <option id="form-id-company" value="company">Company</option>
+            <option id="form-id-other" value="other">Other</option>
+        </select>
+
+        <label for="message">Message</label>
+        <textarea name="message"></textarea>
+
+        <input type="submit" name="submit" value="Send">
+    </form>
+{{ end }}

@@ -1,17 +1,15 @@
-{{ define "title" }}Home{{ end }}
-{{ define "body-class" }}home{{ end }}
+{{ define "title" }}Events{{ end }}
+{{ define "body-class" }}events{{ end }}
 
 {{ define "main" }}
-    {{ partial "hero.html" . }}
-
     <section class="wrapper card-preview">
-        <h2>Our events</h2>
-    
+        <h1>Events</h1>
+
         <ul class="card-preview__list">
             {{ $where := (where (.Data.Pages.ByDate) "Section" "eq" "events") }}
-            {{ $i := 0 }}
+            {{ $where := (where $where "Section" "eq" "events") }}
             {{ range $where }}
-                {{ if and (lt $i 3) (ge .Date now) }}
+                {{ if ge .Date now }}
                     <li>
                         {{ $link := cond (ne .Params.eventLinkOveride "") .Params.eventLinkOveride .Permalink }}
                         <a href="{{ $link }}" class="card-preview__list__item__image">
@@ -22,35 +20,13 @@
                             {{ end }}
                         </a>
                         <div class="card-preview__list__item__details">
-                            <h3><a href="{{ $link }}">{{ .Title }}</a></h3>
+                            <h2><a href="{{ $link }}">{{ .Title }}</a></h2>
                             <p>{{ .Params.eventLocation }}</p>
                             <time datetime="{{ .Date }}">{{ dateFormat "January 2" .Date }}</time>
                         </div>
                     </li>
                 {{ end }}
-                {{ $i := add $i 1}}
             {{ end }}
-            <li class="see-more">
-                <a class="button button--blue" href="/events">See more</a>
-            </li>
         </ul>
     </section>
-
-    <!-- <section class="wrapper block-preview">
-        <h2>Recent posts</h2>
-    
-        <div class="block-preview__list">
-            {{ range first 2 (where (.Data.Pages.ByDate)  "Section" "eq" "posts" ) }}
-                <article>
-                    <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-                    <p>{{ .Params.excerpt }}</p>
-                    <a href="{{ .Permalink }}">Read more</a>
-                </article>
-            {{ end }}
-    
-            <div>
-                <a class="button button--blue" href="/posts">See more</a>
-            </div>
-        </div>
-    </section> -->
 {{ end }}

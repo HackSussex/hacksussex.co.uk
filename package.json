@@ -1,11 +1,11 @@
 {
 	"name": "hacksussex.co.uk",
 	"description": "The HackSussex site",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"author": "Elliot Massen",
 	"scripts": {
 		"start": "webpack --mode development --watch & hugo serve --verbose",
-		"build": "webpack --mode production  -p && hugo"
+		"build": "hugo --gc && webpack --mode production -p && hugo"
 	},
 	"dependencies": {
 		"preact": "^8.3.1"

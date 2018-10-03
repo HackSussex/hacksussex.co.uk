@@ -3,6 +3,10 @@ var HackSussex = (function() {
 		setup: function() {
 			this.menu();
 			this.removeServiceWorkers();
+
+			if(document.body.classList.contains("contact")) {
+				this.contact();
+			}
 		},
 		removeServiceWorkers: function() {
 			navigator.serviceWorker.getRegistrations().then(function(registrations) {
@@ -18,6 +22,13 @@ var HackSussex = (function() {
             menuButton.addEventListener("click", function() {
                 menuButton.parentElement.parentElement.classList.toggle("menu-open");
             });
+		},
+		contact: function() {
+			// Change select option depending on which link was clicked
+			var url = new URL(window.location);
+			var id = url.searchParams.get("id");
+			console.log(id);
+            document.getElementById("form-id-" + id).selected = true;
 		}
 	}
 })();
