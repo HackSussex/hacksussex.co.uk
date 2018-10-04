@@ -11,7 +11,7 @@
             {{ $where := (where (.Data.Pages.ByDate) "Section" "eq" "events") }}
             {{ $.Scratch.Set "counter" 0 }}
             {{ range $where }}
-                {{ if and (le ($.Scratch.Get "counter") 3) (ge .Date now) }}
+                {{ if and (lt ($.Scratch.Get "counter") 3) (ge .Date now) }}
                     <li>
                         {{ $link := cond (ne .Params.eventLinkOveride "") .Params.eventLinkOveride "#" }}
                         <a href="{{ $link }}" class="card-preview__list__item__image">
