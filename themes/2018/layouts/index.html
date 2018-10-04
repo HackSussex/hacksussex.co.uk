@@ -9,11 +9,11 @@
     
         <ul class="card-preview__list">
             {{ $where := (where (.Data.Pages.ByDate) "Section" "eq" "events") }}
-            {{ $i := 0 }}
+            {{ $.Scratch.Set "counter" 0 }}
             {{ range $where }}
-                {{ if and (lt $i 3) (ge .Date now) }}
+                {{ if and (le ($.Scratch.Get "counter") 3) (ge .Date now) }}
                     <li>
-                        {{ $link := cond (ne .Params.eventLinkOveride "") .Params.eventLinkOveride .Permalink }}
+                        {{ $link := cond (ne .Params.eventLinkOveride "") .Params.eventLinkOveride "#" }}
                         <a href="{{ $link }}" class="card-preview__list__item__image">
                             {{ $image := index (.Resources.Match "featuredImage.*") 0 }}
                             {{ $image := $image.Fill "250x150" }}
@@ -28,7 +28,7 @@
                         </div>
                     </li>
                 {{ end }}
-                {{ $i := add $i 1}}
+                {{ $.Scratch.Set "counter" (add ($.Scratch.Get "counter") 1) }}
             {{ end }}
             <li class="see-more">
                 <a class="button button--blue" href="/events">See more</a>
