@@ -1,6 +1,0 @@
-/* TEAM */
-
-Developer: Elliot Massen
-Website: http://elliotmassen.com/
-Twitter: @elliotmassen
-From: Brighton, UK

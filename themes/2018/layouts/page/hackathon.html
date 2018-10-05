@@ -1,0 +1,51 @@
+{{ define "title" }}Hackathon{{ end }}
+{{ define "body-class" }}hackathon{{ end }}
+
+{{ define "main" }}
+    {{ partial "hero.html" . }}
+
+    <!-- <section class="wrapper block-preview">
+        <h2>Recent challenges</h2>
+    
+        <div class="block-preview__list">
+            {{ $where := (where (.Site.Pages.ByDate) "Section" "eq" "challenges") }}
+            {{ $where := (where $where "Kind" "eq" "page") }}
+            {{ $where := first 2 $where }}
+            {{ range $where }}
+                <article>
+                    <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                    <p>{{ .Params.excerpt }}</p>
+                    <a href="{{ .Permalink }}">Find out more</a>
+                </article>
+            {{ end }}
+    
+            <div>
+                <a class="button button--blue" href="/challenges">See more</a>
+            </div>
+        </div>
+    </section> -->
+
+    <section class="wrapper card-preview">
+        <h2>Our sponsors</h2>
+    
+        <ul class="card-preview__list">
+            {{ $where := (where (.Site.Pages.ByParam "tierNo") "Section" "eq" "sponsors") }}
+            {{ $where := (where $where "Kind" "eq" "page") }}
+            {{ range $where }}
+                <li>
+                    <a href="#" class="card-preview__list__item__image">
+                        {{ $image := index (.Resources.Match "featuredImage.*") 0 }}
+                        {{ $image := $image.Fit "250x150" }}
+                        {{ with $image.RelPermalink }}
+                            <img src="{{ . }}"/>
+                        {{ end }}
+                    </a>
+                    <div class="card-preview__list__item__details">
+                        <h3><a href="#">{{ .Title }}</a></h3>
+                        <p>{{ .Params.tierLabel }}</p>
+                    </div>
+                </li>
+            {{ end }}
+        </ul>
+    </section>
+{{ end }}
