@@ -32,8 +32,9 @@
             {{ $where := (where (.Site.Pages.ByParam "tierNo") "Section" "eq" "sponsors") }}
             {{ $where := (where $where "Kind" "eq" "page") }}
             {{ range $where }}
+                {{ $link := cond (ne .Params.linkOveride "") .Params.linkOveride "#" }}
                 <li>
-                    <a href="#" class="card-preview__list__item__image">
+                    <a href="{{ $link }}" class="card-preview__list__item__image">
                         {{ $image := index (.Resources.Match "featuredImage.*") 0 }}
                         {{ $image := $image.Fit "250x150" }}
                         {{ with $image.RelPermalink }}
@@ -41,7 +42,7 @@
                         {{ end }}
                     </a>
                     <div class="card-preview__list__item__details">
-                        <h3><a href="#">{{ .Title }}</a></h3>
+                        <h3><a href="{{ $link }}">{{ .Title }}</a></h3>
                         <p>{{ .Params.tierLabel }}</p>
                     </div>
                 </li>
