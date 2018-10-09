@@ -5,5 +5,6 @@ draft: false
 
 tierNo: 22
 tierLabel: Silver
+linkOveride: "https://reward.cloud/"
 ---
 
