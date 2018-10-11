@@ -27,8 +27,8 @@
                             <time datetime="{{ .Date }}">{{ dateFormat "January 2" .Date }}</time>
                         </div>
                     </li>
+                    {{ $.Scratch.Set "counter" (add ($.Scratch.Get "counter") 1) }}
                 {{ end }}
-                {{ $.Scratch.Set "counter" (add ($.Scratch.Get "counter") 1) }}
             {{ end }}
             <li class="see-more">
                 <a class="button button--blue" href="/events">See more</a>
