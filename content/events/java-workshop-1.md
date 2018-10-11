@@ -5,6 +5,6 @@ date: 2018-10-12T18:00:00+01:00
 draft: false
 
 eventLocation: "Chichester 1, Lab 1"
-eventLinkOveride: ""
+eventLinkOveride: "https://www.facebook.com/events/247098566159388/"
 ---
 
