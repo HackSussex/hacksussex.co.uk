@@ -1,0 +1,18 @@
+{{ define "title" }}FAQs{{ end }}
+{{ define "body-class" }}faq{{ end }}
+
+{{ define "main" }}
+    <section class="wrapper block-preview">
+        <h1>FAQs</h1>
+
+        <dl class="block-preview__list">
+            {{ $where := (where (.Data.Pages.ByTitle) "Section" "eq" "faqs") }}
+            {{ range $where }}
+                <article>
+                    <dd>{{ .Title }}</dd>
+                    <dt>{{ .Content }}</dt>
+                </article>
+            {{ end }}
+        </dl>
+    </section>
+{{ end }}
