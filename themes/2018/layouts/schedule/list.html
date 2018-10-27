@@ -1,0 +1,21 @@
+{{ define "title" }}Schedule{{ end }}
+{{ define "body-class" }}schedule{{ end }}
+
+{{ define "main" }}
+    <section class="wrapper timeline">
+        <h1>Schedule</h1>
+
+        <ul class="timeline__list">
+            {{ $where := (where (.Data.Pages.ByDate) "Section" "eq" "schedule") }}
+            {{ range $where }}
+                <li class="timeline__list__item{{ if .Params.required }} timeline__list__item--required{{ end }}">
+                    <div class="timeline__list__item__details">
+                        <time datetime="{{ .Date }}">{{ .Date.Format "15:04" }}</time>
+                        <h2>{{ .Title }}</h2>
+                        {{ with .Content }}{{ . }}{{ end }}
+                    </div>
+                </li>
+            {{ end }}
+        </ul>
+    </section>
+{{ end }}
