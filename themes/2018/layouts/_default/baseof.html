@@ -66,6 +66,7 @@
     </head>
     <body class='{{ block "body-class" . }}{{ end }}'>
         <header class="header">
+        {{ $isHackathon := or (eq .File.BaseFileName "hackathon") (eq .Section "faqs") }}
         <div class="wrapper">
                 <a href="/">
                     <svg width="112px" height="50px" viewBox="0 0 112 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -113,13 +114,13 @@
             </div>
         </header>
 
-        {{ if eq .File.BaseFileName "hackathon" }}
-            <!-- <div class="header__sub-nav">
+        {{ if $isHackathon }}
+            <div class="header__sub-nav">
                 <ul class="wrapper">
                     <li>
-                        <a href="#">FAQ</a>
+                        <a href="/faqs">FAQ</a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="#">Schedule</a>
                     </li>
                     <li>
@@ -130,9 +131,9 @@
                     </li>
                     <li>
                         <a href="#">Directions</a>
-                    </li>
+                    </li> -->
                 </ul>
-            </div> -->
+            </div>
         {{ end }}
         
 {{ block "main" . }}{{ end }}

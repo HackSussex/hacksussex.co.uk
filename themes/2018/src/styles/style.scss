@@ -40,6 +40,10 @@ p {
 	font-size: 0.8em;
 }
 
+dd {
+	margin-left:0;
+}
+
 a.button, .button, input[type=submit] {
 	text-decoration: none;
 	color:#222;
@@ -254,7 +258,7 @@ input[type=submit] {
                 &:hover, &:focus {
                     border-bottom-color: #fff;
                 }
-            }
+			}
         }
 	}
 
@@ -709,8 +713,9 @@ input[type=submit] {
 				margin-top:0.5rem;
 			}
 
-			h2, h3 {
+			h2, h3, dd {
 				font-size:0.8em;
+				font-weight:700;
 
 				a {
 					text-decoration: none;
@@ -718,7 +723,7 @@ input[type=submit] {
 				}
 			}
 
-			p, & > a {
+			p, ul, & > a {
 				margin-top:0.4rem;
 				font-size:0.7em;
 			}
