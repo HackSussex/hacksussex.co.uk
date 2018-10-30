@@ -5,5 +5,6 @@ draft: false
 
 tierNo: 20
 tierLabel: Silver
+linkOveride: "https://www.bloomberg.com"
 ---
 
