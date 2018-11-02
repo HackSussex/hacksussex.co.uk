@@ -6,4 +6,4 @@ draft: false
 
 required: true
 ---
-How sure how to get here? Check our [directions](#).
+How sure how to get here? Check our [directions](/faqs/#how-do-i-get-to-the-event).
