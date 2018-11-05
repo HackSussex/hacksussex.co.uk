@@ -1,0 +1,19 @@
+{{ define "title" }}Challenges{{ end }}
+{{ define "body-class" }}challenges{{ end }}
+
+{{ define "main" }}
+    <section class="wrapper block-preview">
+        <h1>Challenges</h1>
+
+        <section class="block-preview__list">
+            {{ $where := (where (.Data.Pages.ByDate) "Section" "eq" "challenges") }}
+            {{ range $where }}
+                <article>
+                    <h2>{{ with .Params.sponsorName }}{{ . }}: {{ end }}{{ .Title }}</h2>
+                    <p>{{ .Params.excerpt }}</p>
+                    <a href="{{ .Permalink }}">Find out more</a>
+                </article>
+            {{ end }}
+        </section>
+    </section>
+{{ end }}

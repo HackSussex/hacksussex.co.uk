@@ -1,0 +1,12 @@
+{{ define "title" }}Challenges: {{ .Title }}{{ end }}
+{{ define "body-class" }}challenges-single{{ end }}
+
+{{ define "main" }}
+    <article class="wrapper text-block">
+        <h1>Challenge: {{ .Title }}</h1>
+        {{ .Content }}
+        {{ if .Params.sponsorName }}
+            <p>Sponsor: <a href="{{ .Params.sponsorLink }}">{{ .Params.sponsorName }}</a></p>
+        {{ end }}
+    </article>
+{{ end }}
