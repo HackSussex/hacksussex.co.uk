@@ -92,6 +92,14 @@ input[type=submit], a.button--green, .button--green {
 	}
 }
 
+#mlh-trust-badge {
+	display:none;
+
+	@media screen and (min-width: 70em) {
+		display:block;
+	}
+}
+
 // FORM
 
 input[type=text], input[type=email], input[type=tel], textarea {
