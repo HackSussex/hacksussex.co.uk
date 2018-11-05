@@ -6,7 +6,7 @@
         <h1>Challenges</h1>
 
         <section class="block-preview__list">
-            {{ $where := (where (.Data.Pages.ByDate) "Section" "eq" "challenges") }}
+            {{ $where := (where (.Data.Pages.ByParam "order") "Section" "eq" "challenges") }}
             {{ range $where }}
                 <article>
                     <h2>{{ with .Params.sponsorName }}{{ . }}: {{ end }}{{ .Title }}</h2>

@@ -8,12 +8,12 @@
         <h2>Recent challenges</h2>
     
         <div class="block-preview__list">
-            {{ $where := (where (.Site.Pages.ByDate) "Section" "eq" "challenges") }}
+            {{ $where := (where (.Site.Pages.ByParam "order") "Section" "eq" "challenges") }}
             {{ $where := (where $where "Kind" "eq" "page") }}
             {{ $where := first 2 $where }}
             {{ range $where }}
                 <article>
-                    <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                    <h3><a href="{{ .Permalink }}">{{ with .Params.sponsorName }}{{ . }}: {{ end }}{{ .Title }}</a></h3>
                     <p>{{ .Params.excerpt }}</p>
                     <a href="{{ .Permalink }}">Find out more</a>
                 </article>

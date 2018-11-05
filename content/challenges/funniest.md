@@ -1,9 +1,9 @@
 ---
-title: "Funniest"
+title: "Funniest 😂"
 date: 2018-11-05T11:55:55Z
 draft: false
 
-excerpt: "Awarded to the hack that makes us chuckle! 😂"
+excerpt: "Awarded to the hack that makes us chuckle!"
 sponsorName: "HackSussex"
 sponsorLink: "https://hacksussex.co.uk"
 ---
