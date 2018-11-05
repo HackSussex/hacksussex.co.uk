@@ -66,7 +66,7 @@
     </head>
     <body class='{{ block "body-class" . }}{{ end }}'>
         <header class="header">
-        {{ $isHackathon := or (or (eq .File.BaseFileName "hackathon") (eq .Section "faqs")) (eq .Section "schedule") }}
+        {{ $isHackathon := or (or (or (eq .File.BaseFileName "hackathon") (eq .Section "faqs")) (eq .Section "schedule")) (eq .Section "challenges") }}
         <div class="wrapper">
                 <a href="/">
                     <svg width="112px" height="50px" viewBox="0 0 112 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -123,15 +123,9 @@
                     <li>
                         <a href="/schedule">Schedule</a>
                     </li>
-                    <!--<li>
-                        <a href="#">Tracks & Challenges</a>
-                    </li>
                     <li>
-                        <a href="#">Sponsors</a>
+                        <a href="/challenges">Challenges</a>
                     </li>
-                    <li>
-                        <a href="#">Directions</a>
-                    </li> -->
                 </ul>
             </div>
         {{ end }}
