@@ -2,6 +2,7 @@
 title: "Conversational Giftcards 💳"
 date: 2018-11-05T16:51:07Z
 draft: false
+images: ["/uploads/2018/11/RewardCloud.png"]
 
 excerpt: "Build a chat bot or Alexa skill that allows the user to purchase digital gift cardsfrom via a conversation."
 sponsorName: "Reward Cloud"

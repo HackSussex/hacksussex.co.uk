@@ -2,6 +2,7 @@
 title: "Dat Chatbot 🤖"
 date: 2018-11-05T12:52:02Z
 draft: false
+images: ["/uploads/2018/11/Mnemoscene.png"]
 
 excerpt: "Write an integration that allows you to make copies of Dat archives on your own server via a chat bot."
 sponsorName: "Mnemoscene"

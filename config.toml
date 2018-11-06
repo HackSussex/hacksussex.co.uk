@@ -2,3 +2,7 @@ baseURL = "https://hacksussex.co.uk/"
 languageCode = "en-gb"
 title = "HackSussex"
 theme = "2018"
+
+[social]
+	facebook	= "https://www.facebook.com/hacksussex"
+	twitter		= "https://twitter.com/hacksussex"

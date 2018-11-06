@@ -1,7 +1,8 @@
 ---
-title: "Most Innovative hack to improve daily accessibility challenges using Twilio"
+title: "Most Innovative hack to improve daily accessibility challenges using Twilio 💬"
 date: 2018-11-05T12:57:01Z
 draft: false
+images: ["/uploads/2018/11/Twilio.png"]
 
 excerpt: "How can we use technology to improve accessibility on a daily basis using Twilio APIs?"
 sponsorName: "Twilio"

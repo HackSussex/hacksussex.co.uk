@@ -28,46 +28,49 @@
 
         <link rel="author" href="humans.txt" />
 
-        <meta property="og:title" content="HackSussex" />
-        <meta property="og:description" content="HackSussex is the University of Sussex' hackathon society. We aim to provide events that are fun & accessible for everyone." />
-        <meta property="og:image" content="https://hacksussex.co.uk/brand.png" />
-        <meta property="og:url" content="https://hacksussex.co.uk" />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@hacksussex" />
-        <meta name="twitter:title" content="HackSussex" />
-        <meta name="twitter:description" content="HackSussex is the University of Sussex' hackathon society. We aim to provide events that are fun & accessible for everyone." />
-        <meta name="twitter:image" content="https://hacksussex.co.uk/brand.png" />
+        {{- template "_internal/opengraph.html" . -}}
 
-        <script type="application/ld+json">
-            {
-                "@context": "http://schema.org",
-                "@type": "Event",
-                "name": "HackSussex 2018",
-                "startDate": "2018-11-10",
-                "location": {
-                    "@type": "Place",
-                    "name": "University of Sussex",
-                    "address": {
-                        "@type": "PostalAddress",
-                        "streetAddress": "Falmar",
-                        "addressLocality": "Brighton",
-                        "postalCode": "BN1 9RH",
-                        "addressRegion": "East Sussex",
-                        "addressCountry": "GB"
-                    }
-                },
-                "description": "Presenting HackSussex, a relaxed, creative hackathon for beginners and veterans alike.",
-                "endDate": "2018-11-10",
-                "image": [
-                    "https://hacksussex.co.uk/brand.png"
-                ]
-            }
-        </script>
+	    {{- with $.Param "images" -}}
+	      <meta property="og:image" content="{{ index . 0 | absURL }}" />
+	    {{- end -}}
+
+	    {{- template "_internal/google_news.html" . -}}
+	    {{- template "_internal/schema.html" . -}}
+        {{- template "_internal/twitter_cards.html" . -}}
+
+        {{ $isHackathon := or (or (or (eq .File.BaseFileName "hackathon") (eq .Section "faqs")) (eq .Section "schedule")) (eq .Section "challenges") }}
+
+        {{ if $isHackathon }}
+            <script type="application/ld+json">
+                {
+                    "@context": "http://schema.org",
+                    "@type": "Event",
+                    "name": "HackSussex 2018",
+                    "startDate": "2018-11-10",
+                    "location": {
+                        "@type": "Place",
+                        "name": "University of Sussex",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "streetAddress": "Falmar",
+                            "addressLocality": "Brighton",
+                            "postalCode": "BN1 9RH",
+                            "addressRegion": "East Sussex",
+                            "addressCountry": "GB"
+                        }
+                    },
+                    "description": "Presenting HackSussex, a relaxed, creative hackathon for beginners and veterans alike.",
+                    "endDate": "2018-11-11",
+                    "image": [
+                        "https://hacksussex.co.uk/uploads/2018/11/Basic.png"
+                    ]
+                }
+            </script>
+        {{ end }}
     </head>
     <body class='{{ block "body-class" . }}{{ end }}'>
         <header class="header">
-        {{ $isHackathon := or (or (or (eq .File.BaseFileName "hackathon") (eq .Section "faqs")) (eq .Section "schedule")) (eq .Section "challenges") }}
-        <div class="wrapper">
+            <div class="wrapper">
                 <a href="/">
                     <svg width="112px" height="50px" viewBox="0 0 112 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <title>HackSussex</title>

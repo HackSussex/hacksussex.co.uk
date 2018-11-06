@@ -2,6 +2,7 @@
 title: "Starlight ✨"
 date: 2018-11-05T12:59:13Z
 draft: false
+images: ["/uploads/2018/11/RRMC.png"]
 
 excerpt: "Rolls-Royce Motor Cars invites students of Sussex University to hack Starlight Headliner, one of the marque’s most celebrated bespoke features. This challenge has limited spaces."
 sponsorName: "Rolls-Royce Motor Cars"
