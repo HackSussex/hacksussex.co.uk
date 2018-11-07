@@ -10,8 +10,10 @@
             {{ range $where }}
                 <article>
                     <h2>{{ with .Params.sponsorName }}{{ . }}: {{ end }}{{ .Title }}</h2>
-                    <p>{{ .Params.excerpt }}</p>
-                    <a href="{{ .Permalink }}">Find out more</a>
+                    {{ with .Params.excerpt }}<p>{{ . }}</p>{{ end }}
+                    {{ if .Content }}
+                        <a href="{{ .Permalink }}">Find out more</a>
+                    {{ end }}
                 </article>
             {{ end }}
         </section>
