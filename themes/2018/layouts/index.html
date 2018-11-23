@@ -30,10 +30,15 @@
                     {{ $.Scratch.Set "counter" (add ($.Scratch.Get "counter") 1) }}
                 {{ end }}
             {{ end }}
-            <li class="see-more">
-                <a class="button button--blue" href="/events">See more</a>
-            </li>
+            {{ if gt ($.Scratch.Get "counter") 0 }}
+                <li class="see-more">
+                    <a class="button button--blue" href="/events">See more</a>
+                </li>
+            {{ end }}
         </ul>
+        {{ if eq ($.Scratch.Get "counter") 0 }}
+            <p>There are currently no upcoming events.</p>
+        {{ end }}
     </section>
 
     <!-- <section class="wrapper block-preview">

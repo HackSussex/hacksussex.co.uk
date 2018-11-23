@@ -5,6 +5,7 @@
     <section class="wrapper card-preview">
         <h1>Events</h1>
 
+        {{ $.Scratch.Set "counter" 0 }}
         <ul class="card-preview__list">
             {{ $where := (where (.Data.Pages.ByDate) "Section" "eq" "events") }}
             {{ range $where }}
@@ -24,8 +25,13 @@
                             <time datetime="{{ .Date }}">{{ dateFormat "January 2" .Date }}</time>
                         </div>
                     </li>
+                    {{ $.Scratch.Set "counter" (add ($.Scratch.Get "counter") 1) }}                    
                 {{ end }}
             {{ end }}
         </ul>
+        
+        {{ if eq ($.Scratch.Get "counter") 0 }}
+            <p>There are currently no upcoming events.</p>
+        {{ end }}
     </section>
 {{ end }}
