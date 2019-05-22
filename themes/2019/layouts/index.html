@@ -1,0 +1,61 @@
+{{ define "title" }}Home{{ end }}
+{{ define "body-class" }}home{{ end }}
+
+{{ define "main" }}
+    {{ partial "hero.html" . }}
+
+    <section class="wrapper card-preview">
+        <h2>Our events</h2>
+    
+        <ul class="card-preview__list">
+            {{ $where := (where (.Data.Pages.ByDate) "Section" "eq" "events") }}
+            {{ $.Scratch.Set "counter" 0 }}
+            {{ range $where }}
+                {{ if and (lt ($.Scratch.Get "counter") 3) (ge .Date now) }}
+                    <li>
+                        {{ $link := cond (ne .Params.eventLinkOveride "") .Params.eventLinkOveride "#" }}
+                        <a href="{{ $link }}" class="card-preview__list__item__image">
+                            {{ $image := index (.Resources.Match "featuredImage.*") 0 }}
+                            {{ $image := $image.Fill "250x150" }}
+                            {{ with $image.Permalink }}
+                                <img src="{{ . }}"/>
+                            {{ end }}
+                        </a>
+                        <div class="card-preview__list__item__details">
+                            <h3><a href="{{ $link }}">{{ .Title }}</a></h3>
+                            <p>{{ .Params.eventLocation }}</p>
+                            <time datetime="{{ .Date }}">{{ dateFormat "January 2" .Date }}</time>
+                        </div>
+                    </li>
+                    {{ $.Scratch.Set "counter" (add ($.Scratch.Get "counter") 1) }}
+                {{ end }}
+            {{ end }}
+            {{ if gt ($.Scratch.Get "counter") 0 }}
+                <li class="see-more">
+                    <a class="button button--blue" href="/events">See more</a>
+                </li>
+            {{ end }}
+        </ul>
+        {{ if eq ($.Scratch.Get "counter") 0 }}
+            <p>There are currently no upcoming events.</p>
+        {{ end }}
+    </section>
+
+    <!-- <section class="wrapper block-preview">
+        <h2>Recent posts</h2>
+    
+        <div class="block-preview__list">
+            {{ range first 2 (where (.Data.Pages.ByDate)  "Section" "eq" "posts" ) }}
+                <article>
+                    <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                    <p>{{ .Params.excerpt }}</p>
+                    <a href="{{ .Permalink }}">Read more</a>
+                </article>
+            {{ end }}
+    
+            <div>
+                <a class="button button__blue" href="/posts">See more</a>
+            </div>
+        </div>
+    </section> -->
+{{ end }}

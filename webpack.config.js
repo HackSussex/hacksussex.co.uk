@@ -2,7 +2,7 @@ const MiniCSSExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
     // We only need to use Webpack for things in the src directory
-    context: __dirname + "/themes/2018/src",
+    context: __dirname + "/themes/2019/src",
 
     // These are our two entry files to be seperately bundled
     entry: {
@@ -12,7 +12,7 @@ module.exports = {
 
     // We will output to the static directory
     output: {
-        path: __dirname + "/themes/2018/static/dist",
+        path: __dirname + "/themes/2019/static/dist",
     },
 
     // The following rules specify our loaders

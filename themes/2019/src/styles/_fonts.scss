@@ -1,0 +1,23 @@
+@font-face {
+	font-family: 'Quicksand';
+	src: url('../fonts/Quicksand/Quicksand-Medium.eot');
+	src: url('../fonts/Quicksand/Quicksand-Medium.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Quicksand/Quicksand-Medium.woff2') format('woff2'),
+		url('../fonts/Quicksand/Quicksand-Medium.woff') format('woff'),
+		url('../fonts/Quicksand/Quicksand-Medium.ttf') format('truetype'),
+		url('../fonts/Quicksand/Quicksand-Medium.svg#Quicksand-Medium') format('svg');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Quicksand';
+	src: url('../fonts/Quicksand/Quicksand-Bold.eot');
+	src: url('../fonts/Quicksand/Quicksand-Bold.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Quicksand/Quicksand-Bold.woff2') format('woff2'),
+		url('../fonts/Quicksand/Quicksand-Bold.woff') format('woff'),
+		url('../fonts/Quicksand/Quicksand-Bold.ttf') format('truetype'),
+		url('../fonts/Quicksand/Quicksand-Bold.svg#Quicksand-Bold') format('svg');
+	font-weight: 700;
+	font-style: normal;
+}

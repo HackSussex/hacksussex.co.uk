@@ -6,7 +6,8 @@ draft: false
 
 You can get in touch with all of us at our e-mails:
 
-- [peter@hacksussex.co.uk](mailto:peter@hacksussex.co.uk)
-- [sam@hacksussex.co.uk](mailto:sam@hacksussex.co.uk)
-- [elliot@hacksussex.co.uk](mailto:elliot@hacksussex.co.uk)
+- [alexandru@hacksussex.co.uk](mailto:alexandru@hacksussex.co.uk)
+- [michael@hacksussex.co.uk](mailto:michael@hacksussex.co.uk)
+- [kirill@hacksussex.co.uk](mailto:kirill@hacksussex.co.uk)
+
 

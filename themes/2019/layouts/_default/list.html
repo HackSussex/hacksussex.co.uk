@@ -1,0 +1,18 @@
+{{ define "title" }}Blog{{ end }}
+{{ define "body-class" }}blog{{ end }}
+
+{{ define "main" }}
+    <section class="wrapper block-preview">
+        <h1>Posts</h1>
+
+        <div class="block-preview__list">
+            {{ range where (.Data.Pages.ByDate)  "Section" "eq" "posts" }}
+                <article>
+                    <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+                    <p>{{ .Params.excerpt }}</p>
+                    <a href="{{ .Permalink }}">Read more</a>
+                </article>
+            {{ end }}
+        </div>
+    </section>
+{{ end }}
