@@ -90,15 +90,6 @@ input[type=submit], a.button--green, .button--green {
 	&:hover, &:focus {
 		background: $dark-green;
 	}
-}
-
-#mlh-trust-badge {
-	display:none;
-
-	@media screen and (min-width: 70em) {
-		display:block;
-	}
-}
 
 // FORM
 
