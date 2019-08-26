@@ -35,4 +35,5 @@ var HackSussex = (function() {
 
 window.onload = function() {
 	HackSussex.setup();
+	window.location.replace("https://hacksussex.com");
 };

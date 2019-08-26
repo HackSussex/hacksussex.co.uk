@@ -91,9 +91,9 @@
   !*** ./styles/style.scss ***!
   \***************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./styles/style.scss?");
+eval("throw new Error(\"Module build failed (from /home/kine/hacksussex.co.uk/node_modules/mini-css-extract-plugin/dist/loader.js):\\nModuleBuildError: Module build failed (from /home/kine/hacksussex.co.uk/node_modules/sass-loader/lib/loader.js):\\n\\n}\\n^\\n      Invalid CSS after \\\"}\\\": expected \\\"}\\\", was \\\"\\\"\\n      in /home/kine/hacksussex.co.uk/themes/2019/src/styles/style.scss (line 960, column 1)\\n    at runLoaders (/home/kine/hacksussex.co.uk/node_modules/webpack/lib/NormalModule.js:286:20)\\n    at /home/kine/hacksussex.co.uk/node_modules/loader-runner/lib/LoaderRunner.js:364:11\\n    at /home/kine/hacksussex.co.uk/node_modules/loader-runner/lib/LoaderRunner.js:230:18\\n    at context.callback (/home/kine/hacksussex.co.uk/node_modules/loader-runner/lib/LoaderRunner.js:111:13)\\n    at Object.render [as callback] (/home/kine/hacksussex.co.uk/node_modules/sass-loader/lib/loader.js:52:13)\\n    at Object.done [as callback] (/home/kine/hacksussex.co.uk/node_modules/neo-async/async.js:7974:18)\\n    at options.error (/home/kine/hacksussex.co.uk/node_modules/node-sass/lib/index.js:294:32)\");\n\n//# sourceURL=webpack:///./styles/style.scss?");
 
 /***/ })
 
